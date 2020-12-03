@@ -8,10 +8,10 @@ from xml.dom import minidom
 from tqdm import tqdm
 import datetime
 from datetime import datetime
-
+from util import get_config_information
 
 def news_generator(stri):
-	browser = webdriver.Chrome("/home/oxygen_/Documents/chromedriver")
+	browser = webdriver.Chrome(str(get_config_information()))
 	s = "https://news.google.com"
 	elem = []
 	browser.get(s)

@@ -23,8 +23,9 @@ import weather
 import youtubee
 import news
 import calc
-browser = webdriver.Chrome("/home/oxygen_/Documents/chromedriver")
+from util import get_config_information
 
+browser = webdriver.Chrome(str(get_config_information()))
 s = "https://web.whatsapp.com/"
 browser.get(s)
 

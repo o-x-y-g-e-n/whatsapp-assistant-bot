@@ -8,9 +8,10 @@ from xml.dom import minidom
 from tqdm import tqdm
 import datetime
 from datetime import datetime
+from util import get_config_information
 
 def youtube_generator(stri):
-	browser = webdriver.Chrome("/home/oxygen_/Documents/chromedriver")
+	browser = webdriver.Chrome(str(get_config_information()))
 	strl = stri[8:]
 	s = "https://www.google.com"
 	browser.get(s)

@@ -11,8 +11,9 @@ from datetime import datetime
 from xml.dom import minidom
 from tqdm import tqdm
 import os
+from util import get_config_information
 
-browser = webdriver.Chrome("/home/oxygen_/Documents/chromedriver")
+browser = webdriver.Chrome(str(get_config_information()))
 root = minidom.Document()
 xml = root.createElement('lines') #root
 root.appendChild(xml)

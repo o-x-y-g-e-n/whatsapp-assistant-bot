@@ -8,13 +8,14 @@ from xml.dom import minidom
 from tqdm import tqdm
 import datetime
 from datetime import datetime
+from util import get_config_information
 
 def lyrics_generator(stri):
-	browser = webdriver.Chrome("/home/oxygen_/Documents/chromedriver")
-	mystr = stri[8:]
-	# print(mystr)
+	browser = webdriver.Chrome(str(get_config_information()))
 	s = "https://www.musixmatch.com/"
 	browser.get(s)
+	mystr = stri[8:]
+	# print(mystr)
 	time.sleep(10)
 	sbtn = browser.find_element_by_xpath('//*[@id="site"]/div/div[1]/div/main/div/div[1]/div[2]/div/div/div/div[1]/div/span/span/span/form/div/div[1]/input')
 	sbtn.send_keys(str(mystr))
